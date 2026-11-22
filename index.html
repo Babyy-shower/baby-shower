@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baby Shower Invitation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Great+Vibes&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{--bg1:#F8DDD3;--bg2:#D6E8DB;--bg3:#FBF5EC;--ink:#3E3A36;--accent:#A94A36;--card:#FFFBF4;--line:#EADBC6;color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#4a3330;--bg2:#2a3a30;--bg3:#1f1d1b}}
+:root[data-theme="dark"]{--bg1:#4a3330;--bg2:#2a3a30;--bg3:#1f1d1b}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:'Nunito',sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,var(--bg1) 0,transparent 45%),radial-gradient(circle at 90% 80%,var(--bg2) 0,transparent 50%),var(--bg3);background-color:var(--bg3);display:flex;justify-content:center;padding:20px 14px 40px}
+button{font:inherit;cursor:pointer}
+#cover{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;background:linear-gradient(160deg,#F8DDD3,#D6E8DB);color:#3E3A36;transition:opacity .8s,transform .8s}
+#cover.gone{opacity:0;transform:scale(1.08);pointer-events:none}
+#cover .small{letter-spacing:4px;text-transform:uppercase;font-weight:700;font-size:14px;color:#A94A36}
+#cover .script{font-family:'Great Vibes',cursive;font-size:64px;line-height:1}
+.rock{transform-origin:50% 95%;animation:rock 2.4s ease-in-out infinite}
+@keyframes rock{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+.open{margin-top:12px;border:0;border-radius:999px;padding:14px 34px;background:#A94A36;color:#fff;font-weight:700;font-size:18px;min-height:48px;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.card{width:100%;max-width:440px;background:var(--card);color:#3E3A36;border-radius:28px;border:2px solid var(--line);box-shadow:0 18px 50px rgba(120,80,60,.18);overflow:hidden;text-align:center;opacity:0;transform:translateY(24px);transition:opacity .9s .3s,transform .9s .3s}
+.card.show{opacity:1;transform:none}
+.sky{position:relative;height:130px;background:linear-gradient(#F8DDD3,#FFFBF4)}
+.balloon{position:absolute;bottom:-10px;width:46px;height:58px;border:0;border-radius:50% 50% 48% 48%;animation:float 4s ease-in-out infinite;animation-delay:var(--d);padding:0}
+.balloon::after{content:"";position:absolute;left:50%;top:100%;width:1.5px;height:50px;background:#B9A793}
+.balloon:focus-visible{outline:3px solid #A94A36;outline-offset:4px}
+.balloon.popped{visibility:hidden}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-16px) rotate(3deg)}}
+.hint{font-size:12px;color:#6B625A;margin:6px 0 0}
+.body{padding:6px 26px 30px}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font-weight:700;font-size:13px;color:#A94A36;margin:8px 0 0}
+h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:78px;line-height:.95;margin:4px 0 6px}
+.fam{width:100%;max-width:360px;height:auto}
+.sing{font-family:'Fraunces',serif;font-size:21px;line-height:1.3;margin:6px 0 14px}
+.date{display:flex;align-items:center;justify-content:center;gap:14px;margin:6px 0}
+.date .big{font-family:'Fraunces',serif;font-size:64px;font-weight:700;line-height:1;color:#A94A36}
+.date .side{text-align:left;font-weight:700;letter-spacing:2px;font-size:14px;text-transform:uppercase;line-height:1.6}
+.time{font-weight:700;font-size:20px;margin:0}
+.where{margin:10px 0 0;font-size:17px;line-height:1.4}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 0 6px}
+.count div{background:#F6EBDD;border-radius:14px;padding:10px 0}
+.count b{display:block;font-family:'Fraunces',serif;font-size:26px}
+.count span{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6B625A}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:999px;border:2px solid #A94A36;background:transparent;color:#A94A36;font-weight:700;text-decoration:none;font-size:15px;margin:6px 4px}
+.btn[aria-pressed="true"]{background:#A94A36;color:#fff}
+.rsvp{margin-top:22px;padding-top:18px;border-top:2px dashed var(--line)}
+.rsvp h2{font-family:'Fraunces',serif;font-size:22px;margin:0 0 8px}
+#msg{min-height:24px;font-weight:600;color:#3E6B52;margin:10px 0 0}
+.foot{font-size:14px;color:#6B625A;margin-top:14px}
+.bit{position:fixed;z-index:99;width:9px;height:14px;border-radius:2px;pointer-events:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="cover">
+<div class="small">You’re invited to a</div>
+<div class="script">Baby Shower</div>
+<svg class="rock" viewBox="0 0 200 150" width="220" height="165" aria-hidden="true">
+<path d="M20 70 Q100 150 180 70Z" fill="#F5D6A8"/>
+<path d="M14 96 Q100 150 186 96" stroke="#C99A5B" stroke-width="6" fill="none" stroke-linecap="round"/>
+<ellipse cx="108" cy="68" rx="46" ry="22" fill="#fff" stroke="#EADBC6" stroke-width="3"/>
+<circle cx="66" cy="60" r="22" fill="#E8B48F"/>
+<path d="M46 54 Q66 34 86 54Z" fill="#4A3427"/>
+<circle cx="58" cy="62" r="2.5" fill="#4A3427"/><circle cx="74" cy="62" r="2.5" fill="#4A3427"/>
+<path d="M60 70 Q66 75 72 70" stroke="#C0604B" stroke-width="2" fill="none"/>
+</svg>
+<button class="open" id="openBtn">Tap to open</button>
+</div>
+
+<main class="card" id="card">
+<div class="sky" id="sky">
+<button class="balloon" style="left:12%;background:#F2A99A;--d:0s" aria-label="Pop balloon"></button>
+<button class="balloon" style="left:30%;background:#8FAE9B;--d:.6s" aria-label="Pop balloon"></button>
+<button class="balloon" style="left:48%;background:#F5C26B;--d:1.1s" aria-label="Pop balloon"></button>
+<button class="balloon" style="left:66%;background:#A9C4E0;--d:.3s" aria-label="Pop balloon"></button>
+<button class="balloon" style="left:82%;background:#D9A8C9;--d:.9s" aria-label="Pop balloon"></button>
+</div>
+<p class="hint">Pop a balloon!</p>
+<div class="body">
+<p class="eyebrow">You’re invited to a</p>
+<h1>Baby Shower</h1>
+<p class="eyebrow" style="margin-top:0">In honor of</p>
+<div style="font-family:'Great Vibes',cursive;font-size:58px;line-height:1.1;color:#A94A36;margin:0 0 8px">Deekshit</div>
+<svg class="fam" viewBox="0 0 480 310" role="img" aria-label="A dad kissing mom's head while their young son kisses her pregnant belly">
+<defs>
+<linearGradient id="skA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDBE98"/><stop offset="1" stop-color="#CF9670"/></linearGradient>
+<linearGradient id="skB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3CAA8"/><stop offset="1" stop-color="#DBA682"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9C2B0"/><stop offset="1" stop-color="#7C9C89"/></linearGradient>
+<linearGradient id="dr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7B5A6"/><stop offset="1" stop-color="#E48C7B"/></linearGradient>
+<linearGradient id="pt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#66768A"/><stop offset="1" stop-color="#434F5E"/></linearGradient>
+<radialGradient id="bl" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FBCDC1"/><stop offset="1" stop-color="#E48C7B"/></radialGradient>
+</defs>
+<ellipse cx="240" cy="306" rx="215" ry="7" fill="#000" opacity=".1"/>
+<circle cx="50" cy="48" r="5" fill="#F2A99A"/><circle cx="446" cy="44" r="6" fill="#8FAE9B"/><circle cx="440" cy="130" r="4" fill="#F5D6A8"/><circle cx="70" cy="140" r="4" fill="#F5D6A8"/>
+<g transform="translate(15,0)">
+<!-- dad -->
+<g transform="translate(34,-6)">
+<rect x="133" y="208" width="33" height="92" rx="11" fill="url(#pt)"/><rect x="168" y="208" width="33" height="92" rx="11" fill="url(#pt)"/>
+<path d="M129 300 Q127 310 150 310 H166 V300Z" fill="#3B2A22"/><path d="M203 300 Q205 310 182 310 H166 V300Z" fill="#3B2A22"/>
+<path d="M198 146 Q222 144 240 152" stroke="#8FAE9B" stroke-width="22" fill="none" stroke-linecap="round"/>
+<path d="M126 142 Q128 122 150 120 H182 Q204 122 206 142 L201 226 Q166 234 131 226Z" fill="url(#sh)"/>
+<path d="M152 120 L165 138 L178 120Z" fill="#fff" opacity=".85"/><path d="M165 138 V224" stroke="#678471" stroke-width="1.5"/>
+<circle cx="165" cy="158" r="2" fill="#678471"/><circle cx="165" cy="184" r="2" fill="#678471"/><circle cx="165" cy="210" r="2" fill="#678471"/>
+<path d="M128 142 Q116 176 122 206" stroke="#8FAE9B" stroke-width="24" fill="none" stroke-linecap="round"/>
+<path d="M122 206 L123 236" stroke="#CF9670" stroke-width="14" fill="none" stroke-linecap="round"/><circle cx="123" cy="243" r="8" fill="#CF9670"/>
+<rect x="155" y="106" width="20" height="18" rx="6" fill="#C98E68"/>
+<g transform="rotate(18 165 118)">
+<ellipse cx="141" cy="90" rx="4" ry="6" fill="#CF9670"/><ellipse cx="189" cy="90" rx="4" ry="6" fill="#CF9670"/>
+<ellipse cx="165" cy="88" rx="24" ry="28" fill="url(#skA)"/>
+<path d="M140 84 Q137 54 165 54 Q193 54 190 84 Q186 66 165 67 Q145 66 140 84Z" fill="#2E211A"/>
+<path d="M143 96 Q145 120 165 120 Q185 120 187 96 Q181 109 165 109 Q149 109 143 96Z" fill="#3A2A20" opacity=".9"/>
+<path d="M151 86 Q156 90 161 86 M169 86 Q174 90 179 86" stroke="#2B1B14" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M150 79 Q156 76 162 79 M168 79 Q174 76 180 79" stroke="#2E211A" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M165 88 Q162 97 167 98" stroke="#B9815C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<path d="M155 101 Q165 110 175 101 Q165 105 155 101Z" fill="#D98A7C"/><path d="M155 101 Q165 110 175 101" stroke="#8E4A3C" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+</g>
+</g>
+<!-- mom -->
+<g transform="translate(-40,0)">
+<rect x="273" y="238" width="15" height="62" rx="6" fill="#DBA682"/><rect x="293" y="238" width="15" height="62" rx="6" fill="#DBA682"/>
+<ellipse cx="280" cy="303" rx="13" ry="5" fill="#B5503C"/><ellipse cx="301" cy="303" rx="13" ry="5" fill="#B5503C"/>
+<path d="M266 90 Q262 52 290 50 Q318 52 314 90 Q324 130 318 154 Q290 142 262 154 Q256 130 266 90Z" fill="#3A2820"/>
+<path d="M264 132 Q290 120 316 132 L320 160 Q338 186 332 220 Q322 256 290 262 Q258 256 248 220 Q242 186 260 160Z" fill="url(#dr)"/>
+<path d="M261 160 Q290 170 319 160" stroke="#C96F5E" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="290" cy="212" rx="34" ry="40" fill="url(#bl)" opacity=".7"/>
+<ellipse cx="276" cy="190" rx="10" ry="14" fill="#fff" opacity=".18"/>
+<rect x="281" y="106" width="18" height="20" rx="6" fill="#DBA682"/><path d="M277 124 Q290 144 303 124Z" fill="#DBA682"/>
+<path d="M264 142 Q246 178 266 212" stroke="#DBA682" stroke-width="13" fill="none" stroke-linecap="round"/>
+<circle cx="268" cy="216" r="7" fill="#DBA682"/>
+<ellipse cx="290" cy="88" rx="22" ry="27" fill="url(#skB)"/>
+<path d="M267 88 Q268 58 290 57 Q313 58 313 88 Q304 69 288 71 Q274 72 267 88Z" fill="#3A2820"/>
+<circle cx="275" cy="99" r="5" fill="#F29C8C" opacity=".35"/><circle cx="305" cy="99" r="5" fill="#F29C8C" opacity=".35"/>
+<path d="M277 88 Q282 92 287 88 M293 88 Q298 92 303 88" stroke="#2B1B14" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M276 81 Q282 78 288 81 M292 81 Q298 78 304 81" stroke="#3A2820" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M290 89 Q287 97 291 98" stroke="#BF8661" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<path d="M283 103 Q290 109 297 103" stroke="#B5503C" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+</g>
+<!-- boy -->
+<rect x="318" y="230" width="24" height="28" rx="7" fill="#D9A25B"/>
+<rect x="320" y="256" width="9" height="42" rx="4" fill="#E2B08C"/><rect x="331" y="256" width="9" height="42" rx="4" fill="#E2B08C"/>
+<ellipse cx="324" cy="302" rx="8" ry="4" fill="#B5503C"/><ellipse cx="337" cy="302" rx="8" ry="4" fill="#B5503C"/>
+<g transform="translate(330,236) rotate(-30)">
+<rect x="-12" y="-46" width="24" height="48" rx="9" fill="#7FA6D0"/>
+<rect x="-4" y="-50" width="8" height="8" fill="#E2B08C"/>
+<path d="M-7 -38 L-22 -32" stroke="#7FA6D0" stroke-width="9" fill="none" stroke-linecap="round"/>
+<circle cx="-26" cy="-31" r="4.5" fill="#E2B08C"/>
+<ellipse cx="15" cy="-60" rx="3" ry="4" fill="#E2B08C"/>
+<circle cx="0" cy="-62" r="17" fill="#EDBE98"/>
+<path d="M-17 -64 Q-16 -82 0 -82 Q16 -82 17 -64 Q8 -72 -2 -71 Q-12 -71 -17 -64Z" fill="#2B1D16"/>
+<path d="M-9 -62 Q-6 -59 -3 -62 M4 -62 Q7 -59 10 -62" stroke="#2B1B14" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<circle cx="-10" cy="-55" r="3.5" fill="#F29C8C" opacity=".4"/>
+<path d="M-7 -53 Q0 -46 7 -53 Q0 -49 -7 -53Z" fill="#D98A7C"/><path d="M-7 -53 Q0 -46 7 -53" stroke="#8E4A3C" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+</g>
+<path d="M276 142 Q302 146 303 164" stroke="#DBA682" stroke-width="12" fill="none" stroke-linecap="round"/>
+<circle cx="302" cy="165" r="6" fill="#DBA682"/>
+<path d="M0 0 C-3 -5 -10 -2 0 7 C10 -2 3 -5 0 0Z" transform="translate(222 52)" fill="#F2A99A"/>
+<path d="M0 0 C-3 -5 -10 -2 0 7 C10 -2 3 -5 0 0Z" transform="translate(262 168) scale(.8)" fill="#F2A99A"/>
+</g>
+</svg>
+<p class="sing">Join us in celebrating our little one on the way</p>
+<div class="date"><div class="side">Saturday</div><div class="big">28</div><div class="side">November<br>2026</div></div>
+<p class="time">4:00 PM</p>
+<p class="where">At our home</p>
+
+<div class="count" aria-live="off">
+<div><b id="d">0</b><span>Days</span></div><div><b id="h">0</b><span>Hours</span></div><div><b id="m">0</b><span>Min</span></div><div><b id="s">0</b><span>Sec</span></div>
+</div>
+<a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Baby+Shower&dates=20261128T160000/20261128T190000&details=Join+us+in+celebrating+our+little+one+on+the+way&location=Our+home">Add to calendar</a>
+
+
+</div>
+</main>
+
+<script>
+(function(){
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var cols=['#F2A99A','#8FAE9B','#F5C26B','#A9C4E0','#D9A8C9'];
+function burst(x,y){
+ if(reduce)return;
+ for(var i=0;i<26;i++){
+  var d=document.createElement('div');d.className='bit';
+  d.style.left=x+'px';d.style.top=y+'px';d.style.background=cols[i%cols.length];
+  document.body.appendChild(d);
+  var a=Math.random()*Math.PI*2,r=60+Math.random()*120;
+  d.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+Math.cos(a)*r+'px,'+(Math.sin(a)*r+80)+'px) rotate('+Math.random()*540+'deg)',opacity:0}],{duration:900+Math.random()*700,easing:'cubic-bezier(.2,.8,.3,1)'}).onfinish=function(e){};
+  (function(el){setTimeout(function(){el.remove()},1700)})(d);
+ }
+}
+document.getElementById('openBtn').addEventListener('click',function(e){
+ document.getElementById('cover').classList.add('gone');
+ document.getElementById('card').classList.add('show');
+ burst(window.innerWidth/2,window.innerHeight/2);
+});
+document.querySelectorAll('.balloon').forEach(function(b){
+ b.addEventListener('click',function(){
+  var r=b.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);
+  b.classList.add('popped');setTimeout(function(){b.classList.remove('popped')},4000);
+ });
+});
+var msgs={yes:'Wonderful! We can’t wait to celebrate with you.',maybe:'No pressure. Let us know when you can.',no:'We’ll miss you, and thank you for the love!'};
+document.querySelectorAll('[data-r]').forEach(function(b){
+ b.addEventListener('click',function(){
+  document.querySelectorAll('[data-r]').forEach(function(o){o.setAttribute('aria-pressed','false')});
+  b.setAttribute('aria-pressed','true');
+  document.getElementById('msg').textContent=msgs[b.dataset.r];
+  if(b.dataset.r==='yes'){var r=b.getBoundingClientRect();burst(r.left+r.width/2,r.top);}
+ });
+});
+var target=new Date(2026,10,28,16,0,0).getTime();
+function tick(){
+ var t=Math.max(0,target-Date.now());
+ var s=Math.floor(t/1000);
+ document.getElementById('d').textContent=Math.floor(s/86400);
+ document.getElementById('h').textContent=Math.floor(s%86400/3600);
+ document.getElementById('m').textContent=Math.floor(s%3600/60);
+ document.getElementById('s').textContent=s%60;
+}
+tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
